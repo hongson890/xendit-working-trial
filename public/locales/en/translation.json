@@ -1,0 +1,23 @@
+{
+  "nav": {
+    "home": "Home",
+    "balance": "Balance",
+    "transactions": "Transactions",
+    "acceptPayments": "Accept Payments",
+    "sendPayments": "Send Payments",
+    "callbacks": "Callbacks",
+    "xenPlatform": "xenPlatform",
+    "settings": "Settings",
+    "universities": "Universities",
+    "login": "Login",
+    "register": "Register",
+    "email": "Email Address",
+    "subscribe": "Subscribe",
+    "userProfile": "User Profile"
+  },
+  "universityPage": {
+    "total": "Total",
+    "placeholder": "Search university",
+    "tooltip": "Please input at least 3 characters"
+  }
+}
