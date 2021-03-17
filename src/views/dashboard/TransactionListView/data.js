@@ -5,6 +5,8 @@ export default [
   {
     id: uuid(),
     status: 'settled',
+    moneyInStatus: 'settled',
+    moneyOutStatus: 'settled',
     type: 'payment',
     channel: 'virtualAccount',
     account: '52701292992',
@@ -17,6 +19,8 @@ export default [
   {
     id: uuid(),
     status: 'paid',
+    moneyInStatus: 'paid',
+    moneyOutStatus: 'paid',
     type: 'payment',
     channel: 'eWallet',
     account: '08129828283939',
@@ -29,6 +33,8 @@ export default [
   {
     id: uuid(),
     status: 'pending',
+    moneyInStatus: 'pending',
+    moneyOutStatus: 'pending',
     type: 'payment',
     channel: 'retailOutlet',
     account: '52701292992',
@@ -42,6 +48,8 @@ export default [
   {
     id: uuid(),
     status: 'failed',
+    moneyInStatus: 'failed',
+    moneyOutStatus: 'failed',
     type: 'payment',
     channel: 'virtualAccount',
     account: '52701292992',
@@ -54,6 +62,8 @@ export default [
   {
     id: uuid(),
     status: 'failed',
+    moneyInStatus: 'failed',
+    moneyOutStatus: 'failed',
     type: 'payment',
     channel: 'virtualAccount',
     account: '52701292992',
@@ -66,6 +76,8 @@ export default [
   {
     id: uuid(),
     status: 'refunded',
+    moneyInStatus: 'refunded',
+    moneyOutStatus: 'refunded',
     type: 'payment',
     channel: 'cards',
     account: '223199110099****',
@@ -79,6 +91,8 @@ export default [
   {
     id: uuid(),
     status: 'failed',
+    moneyInStatus: 'failed',
+    moneyOutStatus: 'failed',
     type: 'payment',
     channel: 'virtualAccount',
     account: '52701292992',
@@ -91,6 +105,8 @@ export default [
   {
     id: uuid(),
     status: 'failed',
+    moneyInStatus: 'failed',
+    moneyOutStatus: 'failed',
     type: 'payment',
     channel: 'virtualAccount',
     account: '52701292992',
@@ -103,6 +119,8 @@ export default [
   {
     id: uuid(),
     status: 'failed',
+    moneyInStatus: 'failed',
+    moneyOutStatus: 'failed',
     type: 'payment',
     channel: 'virtualAccount',
     account: '52701292992',
@@ -115,6 +133,8 @@ export default [
   {
     id: uuid(),
     status: 'failed',
+    moneyInStatus: 'failed',
+    moneyOutStatus: 'failed',
     type: 'payment',
     channel: 'virtualAccount',
     account: '52701292992',

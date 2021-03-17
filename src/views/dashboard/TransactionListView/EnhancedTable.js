@@ -23,10 +23,15 @@ import {
   IconButton,
   Tooltip,
   Popover,
-  TextField
+  TextField,
+  Chip
 } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
+import DoneIcon from '@material-ui/icons/Done';
+import HourglassEmptyIcon from '@material-ui/icons/HourglassEmpty';
+import CloseIcon from '@material-ui/icons/Close';
+import ReplyIcon from '@material-ui/icons/Reply';
 
 import { transactionService } from 'src/services/transaction.service';
 import { transactionActions } from 'src/redux/transaction/transaction.actions';
@@ -138,13 +143,13 @@ const useToolbarStyles = makeStyles(theme => ({
   highlight:
     theme.palette.type === 'light'
       ? {
-          color: theme.palette.secondary.main,
-          backgroundColor: lighten(theme.palette.secondary.light, 0.85)
-        }
+        color: theme.palette.secondary.main,
+        backgroundColor: lighten(theme.palette.secondary.light, 0.85)
+      }
       : {
-          color: theme.palette.text.primary,
-          backgroundColor: theme.palette.secondary.dark
-        },
+        color: theme.palette.text.primary,
+        backgroundColor: theme.palette.secondary.dark
+      },
   title: {
     flex: '1 1 100%'
   }
@@ -373,6 +378,90 @@ export default function EnhancedTable() {
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
 
+  const getStatus = (status, type) => {
+    if (status === 'settled' || status === 'paid') {
+      return (
+        <Chip
+          icon={
+            <DoneIcon
+              style={{
+                color: '#007C5C',
+                fontSize: 12
+              }}
+            />
+          }
+          label={status}
+          style={{
+            color: '#007C5C',
+            textTransform: 'capitalize',
+            backgroundColor: '#bff3e6'
+          }}
+        />
+      );
+    }
+
+    if (status === 'pending') {
+      return (
+        <Chip
+          icon={
+            <HourglassEmptyIcon
+              style={{
+                color: '#997207',
+                fontSize: 12
+              }}
+            />
+          }
+          label={status}
+          style={{
+            color: '#997207',
+            textTransform: 'capitalize',
+            backgroundColor: '#FFE59D'
+          }}
+        />
+      );
+    }
+
+    if (status === 'failed') {
+      return (
+        <Chip
+          icon={
+            <CloseIcon
+              style={{
+                color: '#E84855',
+                fontSize: 12
+              }}
+            />
+          }
+          label={status}
+          style={{
+            color: '#E84855',
+            textTransform: 'capitalize',
+            backgroundColor: '#F9D1D5'
+          }}
+        />
+      );
+    }
+
+    return (
+      <Chip
+        icon={
+          <ReplyIcon
+            style={{
+              color: '#777777',
+              fontSize: 12
+            }}
+          />
+        }
+        label={status}
+        style={{
+          color: '#777777',
+          textTransform: 'capitalize',
+          backgroundColor: '#ECECEC'
+        }}
+      />
+    );
+  };
+
   return (
     <div className={classes.root}>
       <Paper className={classes.paper}>
@@ -412,10 +501,20 @@ export default function EnhancedTable() {
                       id={labelId}
                       scope="row"
                     >
-                      {row.status}
+                      {getStatus(row.status)}
                     </TableCell>
-                    <TableCell align="left">{row.type}</TableCell>
-                    <TableCell align="left">{row.channel}</TableCell>
+                    <TableCell
+                      align="left"
+                      style={{ textTransform: 'capitalize' }}
+                    >
+                      {row.type}
+                    </TableCell>
+                    <TableCell
+                      align="left"
+                      style={{ textTransform: 'capitalize' }}
+                    >
+                      {row.channel}
+                    </TableCell>
                     <TableCell align="left">{row.account}</TableCell>
                     <TableCell align="right">{row.amount}</TableCell>
                     <TableCell

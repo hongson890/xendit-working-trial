@@ -16,18 +16,23 @@ const useStyles = makeStyles(theme => ({
     '& .MuiPopover-paper': {
       marginTop: theme.spacing(1)
     }
+  },
+
+  btn: {
+    marginTop: theme.spacing(1),
+    marginRight: theme.spacing(2)
   }
 }));
 
 const Filter = ({
-  anchorEl,
-  handleClose,
-  filterData: filter,
-  setFilterData,
-  setFilterLength,
-  onFilter,
-  ...rest
-}) => {
+                  anchorEl,
+                  handleClose,
+                  filterData: filter,
+                  setFilterData,
+                  setFilterLength,
+                  onFilter,
+                  ...rest
+                }) => {
   const classes = useStyles();
 
   const handleChange = event => {
@@ -67,7 +72,7 @@ const Filter = ({
       className={classes.menu}
       {...rest}
     >
-      <Box style={{ minWidth: '70em' }}>
+      <Box style={{ minWidth: '70em', outline: 'none' }}>
         <Box
           fullWidth
           display="flex"
@@ -176,7 +181,10 @@ const Filter = ({
             display="flex"
             flexDirection="column"
             p={2}
-            style={{ borderLeft: '1px solid rgba(0, 0, 0, 0.12)' }}
+            style={{
+              borderLeft: '1px solid rgba(0, 0, 0, 0.12)',
+              minHeight: 260
+            }}
           >
             <Box>MONEY OUT STATUS</Box>
             <FormControlLabel
@@ -217,7 +225,10 @@ const Filter = ({
             display="flex"
             flexDirection="column"
             p={2}
-            style={{ borderLeft: '1px solid rgba(0, 0, 0, 0.12)' }}
+            style={{
+              borderLeft: '1px solid rgba(0, 0, 0, 0.12)',
+              minHeight: 260
+            }}
           >
             <Box>TYPE</Box>
             <FormControlLabel
@@ -269,7 +280,10 @@ const Filter = ({
             display="flex"
             flexDirection="column"
             p={2}
-            style={{ borderLeft: '1px solid rgba(0, 0, 0, 0.12)' }}
+            style={{
+              borderLeft: '1px solid rgba(0, 0, 0, 0.12)',
+              minHeight: 260
+            }}
           >
             <Box>CHANNEL</Box>
             <FormControlLabel
